@@ -51,12 +51,23 @@ const editTodo = (userID) => {
     return todo
     
   })
-  console.log(newTodos);
+
 
     setTodos(newTodos)
 
 
 }
+
+  
+
+ const changeHandler = (event)=>{
+
+  setStatus(event.target.value)
+
+
+}
+
+
 
 
 
@@ -88,7 +99,7 @@ const editTodo = (userID) => {
               />
             </button>
           </div>
-          <select className="p-2" name="todos" id="todo-option">
+          <select onChange={changeHandler} className="p-2" name="todos" id="todo-option">
             <option value="all">all</option>
             <option className="text-green-600" value="completed">
               completed
@@ -101,9 +112,21 @@ const editTodo = (userID) => {
       </div>
 
       <div className="todo_container mt-10 flex flex-col justify-center items-center gap-3">
-        {todos.map((todo) => {
+        { status==="all"&& todos.map((todo) => {
           return <Todos key={todo.id} {...todo} onRemove={removeTodo} onEdit={editTodo} />;
         })}
+
+{ status==="completed"&& todos.filter(todo=>{return todo.status}).map((todo) => {
+          return <Todos key={todo.id} {...todo} onRemove={removeTodo} onEdit={editTodo} />;
+        })}
+
+
+
+{ status==="Uncompleted"&& todos.filter(todo=>{return !todo.status}).map((todo) => {
+          return <Todos key={todo.id} {...todo} onRemove={removeTodo} onEdit={editTodo} />;
+        })}
+
+
       </div>
     </div>
   );

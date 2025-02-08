@@ -2,7 +2,7 @@ import { Icon } from "@iconify-icon/react/dist/iconify.js";
 
 export default function Todos({ id, todoTitle, status, onRemove,onEdit }) {
 
-  console.log('Hello');
+
 
 
   const getStatusClass = () => {
