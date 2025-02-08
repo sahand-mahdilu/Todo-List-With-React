@@ -33,11 +33,31 @@ export default function TodoList() {
         return prev.filter(todo =>todo.id!==userId)
     })
 
-    console.log(userId);
 }
 
 
-  console.log(todos);
+
+const editTodo = (userID) => {
+
+  let newTodos= todos.map(todo=>{
+
+    if(todo.id===userID){
+
+      todo.status=!todo.status
+
+    }
+    console.log(todo);
+    return todo
+    
+  })
+  console.log(newTodos);
+
+    setTodos(newTodos)
+
+
+}
+
+
 
   return (
     <div>
@@ -81,7 +101,7 @@ export default function TodoList() {
 
       <div className="todo_container mt-10 flex flex-col justify-center items-center gap-3">
         {todos.map((todo) => {
-          return <Todos key={todo.id} {...todo} onRemove={removeTodo} />;
+          return <Todos key={todo.id} {...todo} onRemove={removeTodo} onEdit={editTodo} />;
         })}
       </div>
     </div>

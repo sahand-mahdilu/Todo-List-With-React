@@ -1,16 +1,20 @@
 import { Icon } from "@iconify-icon/react/dist/iconify.js";
 
-export default function Todos({ id, todoTitle, status, onRemove }) {
-  console.log(id);
-  console.log(todoTitle);
-  console.log(status);
-  console.log(onRemove);
+export default function Todos({ id, todoTitle, status, onRemove,onEdit }) {
+
+  console.log('Hello');
+
+
+  const getStatusClass = () => {
+    return status ? "opacity-50" : "opacity-100";
+  };
 
   return (
-    <div className="w-[350px] pl-2 bg-purple-300 flex items-center justify-between rounded-lg ">
+    <div className={`${getStatusClass()} w-[350px] pl-2 bg-purple-300 flex items-center justify-between rounded-lg  `}>
       <span>{todoTitle}</span>
       <div className="flex items-center">
         <Icon
+          onClick={()=>{onEdit(id)}}
           className=" bg-green-400 cursor-pointer hover:bg-green-300"
           icon="mynaui:check-solid"
           width="35"
