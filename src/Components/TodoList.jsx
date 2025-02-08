@@ -25,10 +25,15 @@ export default function TodoList() {
             status:false
         }
 
+
         setTodos(prev=>{
 
           return [...prev,newTodoObject]
         })
+
+        setTitle("")
+
+       
 
         
         
