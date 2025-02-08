@@ -5,6 +5,15 @@ export default function TodoList() {
 
     <div>
         <Header/>
+
+        <div>
+            <form action="">
+                <input type="text"name="todo-name" />
+                
+            </form>
+        </div>
+
+
     </div>
   )
 }
