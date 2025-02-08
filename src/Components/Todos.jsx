@@ -2,7 +2,7 @@ import { Icon } from "@iconify-icon/react/dist/iconify.js";
 
 export default function Todos() {
   return (
-    <div className="w-[25%] pl-2 bg-purple-300 flex items-center justify-between ">
+    <div className="w-[350px] pl-2 bg-purple-300 flex items-center justify-between rounded-lg ">
       <span>title</span>
       <div className="flex items-center">
 

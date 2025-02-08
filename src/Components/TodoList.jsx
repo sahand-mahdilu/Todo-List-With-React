@@ -1,8 +1,22 @@
 import { Icon } from "@iconify-icon/react/dist/iconify.js";
 import Header from "./Header";
 import Todos from "./Todos";
+import { useState } from "react";
 
 export default function TodoList() {
+    const [title ,setTitle]=useState("")
+
+
+    const todoTitleHandler=(event)=>{
+
+        setTitle(event.target.value)
+
+      
+    }
+
+
+
+
   return (
 
     <div>
@@ -11,9 +25,9 @@ export default function TodoList() {
         <div>
             <form className="flex justify-center items-center gap-3 mt-5 " action="">
                 <div className="w-[40%] relative ">
-                <input className="p-2 pr-10 w-full " placeholder="Enter todo..." type="text"name="todo-name" />
+                <input onChange={todoTitleHandler} className="p-2 pr-10 w-full " placeholder="Enter todo..." type="text"name="todo-name" />
                 <button type="submit">
-                <Icon className=" text-green-400  absolute right-0 top-1/2 transform -translate-y-1/2" icon="mynaui:plus-square" width="40" height="40" />
+                <Icon className=" hover:bg-blue-300 hover:text-white text-green-400  absolute right-0 top-1/2 transform -translate-y-1/2" icon="mynaui:plus-square" width="40" height="40" />
                 </button>
                 
 
