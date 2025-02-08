@@ -68,10 +68,14 @@ export default function TodoList() {
 
         <div className="todo_container mt-10 flex flex-col justify-center items-center gap-3">
 
-                <Todos/>
-                <Todos/>
-                <Todos/>
+            {todos.map(todo=>{
 
+               return <Todos key={todo.id} {...todo}/>
+
+
+            })}
+
+              
         </div>
 
 

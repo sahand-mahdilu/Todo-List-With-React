@@ -1,9 +1,21 @@
 import { Icon } from "@iconify-icon/react/dist/iconify.js";
 
-export default function Todos() {
+export default function Todos({id,todoTitle,status}) {
+    console.log(id);
+    console.log(todoTitle);
+    console.log(status);
+
+  
+
+
+
+    
+
+
+
   return (
     <div className="w-[350px] pl-2 bg-purple-300 flex items-center justify-between rounded-lg ">
-      <span>title</span>
+      <span>{todoTitle}</span>
       <div className="flex items-center">
 
         
