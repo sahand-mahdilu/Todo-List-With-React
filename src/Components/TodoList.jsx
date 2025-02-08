@@ -1,5 +1,6 @@
 import { Icon } from "@iconify-icon/react/dist/iconify.js";
 import Header from "./Header";
+import Todos from "./Todos";
 
 export default function TodoList() {
   return (
@@ -19,14 +20,23 @@ export default function TodoList() {
                 </div>
                 <select className="p-2" name="todos" id="todo-option">
                 <option value="all">all</option>
-                <option value="completed">completed</option>
-                <option value="Uncompleted">Uncompleted</option>
+                <option className="text-green-600" value="completed">completed</option>
+                <option className="text-red-500" value="Uncompleted">Uncompleted</option>
 
                 </select>
 
                 
 
             </form>
+
+        </div>
+
+        <div className="todo_container mt-10 flex flex-col justify-center items-center gap-3">
+
+                <Todos/>
+                <Todos/>
+                <Todos/>
+
         </div>
 
 
