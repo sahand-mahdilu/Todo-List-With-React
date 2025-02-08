@@ -6,6 +6,7 @@ import { useState } from "react";
 export default function TodoList() {
   const [title, setTitle] = useState("");
   const [todos, setTodos] = useState([]);
+  const [status, setStatus]= useState('all')
 
   const todoTitleHandler = (event) => {
     setTitle(event.target.value);
