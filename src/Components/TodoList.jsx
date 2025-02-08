@@ -19,17 +19,24 @@ export default function TodoList() {
 
         event.preventDefault()
 
-        let newTodoObject={
-            id:todos.length+1,
-            todoTitle:title,
-            status:false
+        if(title){
+
+
+            let newTodoObject={
+                id:todos.length+1,
+                todoTitle:title,
+                status:false
+            }
+            setTodos(prev=>{
+
+                return [...prev,newTodoObject]
+              })
         }
 
+        
 
-        setTodos(prev=>{
 
-          return [...prev,newTodoObject]
-        })
+      
 
         setTitle("")
 
